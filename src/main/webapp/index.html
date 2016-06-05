@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js" ></script>
+
+    <script>
+
+        function addBanco() {
+            $.ajax({
+                url: "banco",
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json"
+                },
+                data: $("#bancoArea").html()
+            }).done(function( data, textStatus, jqXHR ) {
+                alert("created");
+            }).fail(function( jqXHR, textStatus, errorThrown ) {
+                alert("failed");
+            });
+        }
+
+
+    </script>
+
+
+
+
+</head>
+<body>
+
+<div>
+
+    <textarea id="bancoArea">
+        {"banco": "Santander Rio",
+        "x": 1234,
+        "y": 5678,
+        "sucursal": "Almagro",
+        "gerente": "Lorenzo",
+        "servicios": [
+        "Cobros", "Pagos", "Moneda extranjera"
+        ]}
+    </textarea>
+    <button value="Crear banco" onclick="addBanco()"></button>
+</div>
+
+</body>
+</html>
