@@ -1,0 +1,27 @@
+[
+    {
+        "banco": "Santander Rio",
+        "x": 1234,
+        "y": 5678,
+        "sucursal": "Almagro",
+        "gerente": "Lorenzo",
+        "servicios": [
+            "Cobros",
+            "Pagos",
+            "Moneda extranjera"
+        ]
+    },
+    {
+        "banco": "Galicia",
+        "x": 9999,
+        "y": 8888,
+        "sucursal": "Flores",
+        "gerente": "Roberto Gomez",
+        "servicios": [
+            "Cobros",
+            "Pagos",
+            "Acciones",
+            "Plazo Fijo"
+        ]
+    }
+]
