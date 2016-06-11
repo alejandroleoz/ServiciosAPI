@@ -2,6 +2,9 @@ package utn.tp.poi.model;
 
 import java.util.Set;
 
+/**
+ * Entity
+ */
 public class BancoDTO {
     private String banco;
     private double x;

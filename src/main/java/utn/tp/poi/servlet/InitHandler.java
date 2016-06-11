@@ -20,7 +20,7 @@ public class InitHandler implements ServletContextListener {
         try {
             URL configURL = servletContextEvent.getServletContext().getResource("/WEB-INF/resources/bancosConfig.json");
             String filename = configURL.getFile();
-            bancos = Factory.getInstance().createBancosFromConfig(filename);
+            bancos = Resources.getInstance().getFactory().createBancosFromConfig(filename);
         } catch (Exception e) {
             e.printStackTrace();
             bancos = Collections.emptySet();

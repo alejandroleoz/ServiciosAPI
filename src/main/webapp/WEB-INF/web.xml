@@ -22,4 +22,9 @@
         <url-pattern>/*</url-pattern>
     </servlet-mapping>
 
+    <!-- Init default settings form config files at startup-->
+    <listener>
+        <listener-class>utn.tp.poi.servlet.InitHandler</listener-class>
+    </listener>
+
 </web-app>
