@@ -29,7 +29,7 @@ public class CentroAPI {
 
     @RequestMapping(method = POST)
     public void crear(@RequestBody CentroDTO centro) {
-        repoCentros.addCentro(centro);
+        repoCentros.addItem(centro);
     }
 
     @RequestMapping(method = GET)

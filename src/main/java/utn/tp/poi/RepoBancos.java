@@ -6,41 +6,10 @@ import utn.tp.poi.model.BancoDTO;
 import java.util.HashSet;
 import java.util.Set;
 
-public class RepoBancos {
-    private Set<BancoDTO> bancos = new HashSet<BancoDTO>();
+public class RepoBancos extends AbstractRepo<BancoDTO> {
 
-    /**
-     * Default constructor
-     */
-    public RepoBancos(){
-    }
-
-    /**
-     * Contructor with initial data
-     * @param initialData
-     */
-    public RepoBancos(Set<BancoDTO> initialData) {
-        if(initialData!=null){
-            bancos.addAll(initialData);
-        }
-    }
-
-    /**
-     * Adds a new entry
-     * @param banco
-     * @return
-     */
-    public boolean addBanco(BancoDTO banco) {
-        return this.bancos.add(banco);
-    }
-
-    /**
-     * Removes given entry
-     * @param banco
-     * @return
-     */
-    public boolean removeBanco(BancoDTO banco) {
-        return this.bancos.remove(banco);
+    public RepoBancos(Set<BancoDTO> bancos) {
+        super(bancos);
     }
 
     /**
@@ -54,7 +23,7 @@ public class RepoBancos {
         bancoQuery = bancoQuery.length() > 0 ? ".*" + bancoQuery.toLowerCase() + ".*" : "";
         servicioQuery = servicioQuery.length() > 0 ? ".*" + servicioQuery.toLowerCase() + ".*" : "";
 
-        for (BancoDTO banco : bancos) {
+        for (BancoDTO banco : this.getItems()) {
             if (banco.getBanco().toLowerCase().matches(bancoQuery)) {
                 result.add(banco);
             } else {

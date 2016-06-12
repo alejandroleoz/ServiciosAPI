@@ -29,7 +29,7 @@ public class BancoAPI {
 
     @RequestMapping(method = POST)
     public void crear(@RequestBody BancoDTO banco) {
-        repoBancos.addBanco(banco);
+        repoBancos.addItem(banco);
     }
 
     @RequestMapping(method = GET)
