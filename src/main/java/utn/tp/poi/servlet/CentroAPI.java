@@ -33,7 +33,7 @@ public class CentroAPI {
     }
 
     @RequestMapping(method = GET)
-    public Set<CentroDTO> buscar(@RequestParam(value = "zona") String zona) {
+    public Set<CentroDTO> buscar(@RequestParam(value = "zona", defaultValue = "", required = false) String zona) {
         return repoCentros.buscar(zona);
     }
 }

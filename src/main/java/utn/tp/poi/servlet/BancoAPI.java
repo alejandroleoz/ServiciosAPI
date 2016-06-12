@@ -33,7 +33,7 @@ public class BancoAPI {
     }
 
     @RequestMapping(method = GET)
-    public Set<BancoDTO> buscar(@RequestParam(value = "banco") String banco, @RequestParam(value = "servicio") String servicio) {
+    public Set<BancoDTO> buscar(@RequestParam(value = "banco", defaultValue = "", required = false) String banco, @RequestParam(value = "servicio", defaultValue = "", required = false) String servicio) {
         return repoBancos.buscar(banco, servicio);
     }
 }

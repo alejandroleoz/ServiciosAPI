@@ -3,7 +3,6 @@ package utn.tp.poi;
 
 import utn.tp.poi.model.CentroDTO;
 
-import java.util.Collections;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -21,8 +20,9 @@ public class RepoCentros extends AbstractRepo<CentroDTO> {
     public Set<CentroDTO> buscar(String zonaQuery) {
         Set<CentroDTO> result = new HashSet<CentroDTO>();
 
+        // if no query set -> return all (CAUTION: this is just because there are few items)
         if (zonaQuery.trim().length() == 0) {
-            return Collections.emptySet();
+            return new HashSet<>(this.getItems());
         }
 
         zonaQuery = ".*" + zonaQuery.toLowerCase() + ".*";
