@@ -1,0 +1,7 @@
+
+# ignore project directory and descriptor
+*.iml
+.idea/*
+
+# ignore output directory
+target/*

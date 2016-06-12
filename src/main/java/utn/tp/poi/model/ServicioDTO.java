@@ -1,49 +1,74 @@
 package utn.tp.poi.model;
 
+import java.util.Set;
+
 public class ServicioDTO {
-    private int diaSemana;
-    private int horarioDesde;
-    private int minutosDesde;
-    private int horarioHasta;
-    private int minutosHasta;
+    private String nombre;
+    private Set<ServicioDTO.Horario> horarios;
 
-    public int getDiaSemana() {
-        return diaSemana;
+    public String getNombre() {
+        return nombre;
     }
 
-    public void setDiaSemana(int diaSemana) {
-        this.diaSemana = diaSemana;
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
     }
 
-    public int getHorarioDesde() {
-        return horarioDesde;
+    public Set<Horario> getHorarios() {
+        return horarios;
     }
 
-    public void setHorarioDesde(int horarioDesde) {
-        this.horarioDesde = horarioDesde;
+    public void setHorarios(Set<Horario> horarios) {
+        this.horarios = horarios;
     }
 
-    public int getMinutosDesde() {
-        return minutosDesde;
+    public static class Horario {
+        private int diaSemana;
+        private int horaDesde;
+        private int minutosDesde;
+        private int horaHasta;
+        private int minutosHasta;
+
+        public int getDiaSemana() {
+            return diaSemana;
+        }
+
+        public void setDiaSemana(int diaSemana) {
+            this.diaSemana = diaSemana;
+        }
+
+        public int getHoraDesde() {
+            return horaDesde;
+        }
+
+        public void setHoraDesde(int horarioDesde) {
+            this.horaDesde = horarioDesde;
+        }
+
+        public int getMinutosDesde() {
+            return minutosDesde;
+        }
+
+        public void setMinutosDesde(int minutosDesde) {
+            this.minutosDesde = minutosDesde;
+        }
+
+        public int getHoraHasta() {
+            return horaHasta;
+        }
+
+        public void setHoraHasta(int horarioHasta) {
+            this.horaHasta = horarioHasta;
+        }
+
+        public int getMinutosHasta() {
+            return minutosHasta;
+        }
+
+        public void setMinutosHasta(int minutosHasta) {
+            this.minutosHasta = minutosHasta;
+        }
+
     }
 
-    public void setMinutosDesde(int minutosDesde) {
-        this.minutosDesde = minutosDesde;
-    }
-
-    public int getHorarioHasta() {
-        return horarioHasta;
-    }
-
-    public void setHorarioHasta(int horarioHasta) {
-        this.horarioHasta = horarioHasta;
-    }
-
-    public int getMinutosHasta() {
-        return minutosHasta;
-    }
-
-    public void setMinutosHasta(int minutosHasta) {
-        this.minutosHasta = minutosHasta;
-    }
 }
