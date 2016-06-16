@@ -1,15 +1,21 @@
 package utn.tp.poi;
 
-import org.springframework.boot.json.JsonParser;
-import org.springframework.boot.json.JsonParserFactory;
-import utn.tp.poi.model.BancoDTO;
-import utn.tp.poi.model.CentroDTO;
-import utn.tp.poi.model.ServicioDTO;
-
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.*;
+import java.nio.charset.Charset;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
+
+import org.springframework.boot.json.JsonParser;
+import org.springframework.boot.json.JsonParserFactory;
+
+import utn.tp.poi.model.BancoDTO;
+import utn.tp.poi.model.CentroDTO;
+import utn.tp.poi.model.ServicioDTO;
 
 public class Factory {
 
@@ -102,6 +108,7 @@ public class Factory {
      */
     private List<Map> getItemsFromFile(String filename) throws IOException {
         final int BUFFER_SIZE = 1024;
+        Charset utf8 = Charset.forName("UTF-8");
         byte[] buffer = new byte[BUFFER_SIZE];
         int count;
         StringBuilder str = new StringBuilder();
@@ -111,7 +118,7 @@ public class Factory {
             fis = new FileInputStream(filename);
             count = fis.read(buffer);
             while (count > 0) {
-                str.append(new String(buffer));
+                str.append(new String(buffer,utf8));
                 count = fis.read(buffer);
             }
         } finally {
