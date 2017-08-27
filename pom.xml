@@ -5,7 +5,9 @@
     <groupId>utn.tp.poi</groupId>
     <artifactId>Consultas</artifactId>
     <version>1.0</version>
-    <packaging>war</packaging>
+
+    <!-- uncomment this for war build (to be deployed in tomcat)-->
+    <!--<packaging>war</packaging>-->
 
     <name>ServiciosAPI</name>
     <url>http://maven.apache.org</url>

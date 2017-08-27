@@ -2,19 +2,23 @@ package utn.tp.poi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import utn.tp.poi.servlet.DataInitializer;
+import utn.tp.poi.servlet.InitHandler;
+
+import java.net.URL;
 
 @SpringBootApplication
 public class App {
     public static void main(String[] args) {
-//        SpringApplication.run(App.class, args);
 
+        URL bancosURL = App.class.getClassLoader().getResource("bancosConfig.json");
+        URL centrosURL = App.class.getClassLoader().getResource("centrosConfig.json");
 
-        Factory factory = new Factory();
-        try{
-            factory.createCentrosFromConfig("/Users/aleoz/Mago/repository/github/ServiciosAPI/src/main/webapp/WEB-INF/resources/centrosConfig.json");
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        DataInitializer initializer = new DataInitializer();
+        initializer.initCentrosData(centrosURL);
+        initializer.initBancosData(bancosURL);
 
+        // start application after config
+        SpringApplication.run(App.class, args);
     }
 }
