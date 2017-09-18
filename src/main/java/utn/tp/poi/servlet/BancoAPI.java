@@ -14,7 +14,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @RestController
-@RequestMapping("/banco")
+@RequestMapping("/api/banco")
 public class BancoAPI {
 
     private RepoBancos repoBancos;

@@ -2,12 +2,14 @@ package utn.tp.poi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.web.servlet.ServletComponentScan;
 import utn.tp.poi.servlet.DataInitializer;
 import utn.tp.poi.servlet.InitHandler;
 
 import java.net.URL;
 
 @SpringBootApplication
+@ServletComponentScan
 public class App {
     public static void main(String[] args) {
 

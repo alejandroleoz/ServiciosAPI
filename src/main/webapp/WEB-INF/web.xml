@@ -19,7 +19,7 @@
     </servlet>
     <servlet-mapping>
         <servlet-name>RestAPI</servlet-name>
-        <url-pattern>/*</url-pattern>
+        <url-pattern>/api/*</url-pattern>
     </servlet-mapping>
 
     <!-- Init default settings form config files at startup-->
