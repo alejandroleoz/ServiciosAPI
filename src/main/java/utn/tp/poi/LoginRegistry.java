@@ -1,11 +1,10 @@
 package utn.tp.poi;
 
 
-import utn.tp.poi.servlet.Login;
-
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 
 public class LoginRegistry {
 
@@ -15,7 +14,7 @@ public class LoginRegistry {
 
 
     public static LoginRegistry getInstance() {
-        if(instance == null) {
+        if (instance == null) {
             instance = new LoginRegistry();
         }
         return instance;
@@ -24,13 +23,18 @@ public class LoginRegistry {
     private LoginRegistry() {
         loggedUsers = new HashMap<>();
         users = new HashMap<>();
-        users.put("admin", "admin");
-        users.put("user1", "pass1");
+    }
+
+    public void setUsuarios(Properties usuarios) {
+        users.clear();
+        for (String key : usuarios.stringPropertyNames()) {
+            users.put(key, usuarios.getProperty(key));
+        }
     }
 
     public String login(String user, String pass) {
         String passForUser = users.get(user);
-        if(passForUser != null && passForUser.equals(pass)) {
+        if (passForUser != null && passForUser.equals(pass)) {
             this.logout(user);
             LoginEntry loginEntry = new LoginEntry(user);
             loggedUsers.put(user, loginEntry);
